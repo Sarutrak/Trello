@@ -21,25 +21,21 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header"><i class="far fa-clock" style="margin-right: 5px;"></i><h7>Completed</h7>
-
-                        </div>
+                        <div class="card-header"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i><h7>Calendar</h7></div>
                         <div class="card-body">
-                            Completed page!
+                            <iframe src="https://calendar.google.com/calendar/embed?src=icesu1303%40gmail.com&ctz=Asia%2FBangkok" style="border: 0; width: 100%; height: 600px;"  frameborder="0" scrolling="no"></iframe>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</body>
-
-
+</body>  
 <div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
-  <div class="btn-holder">
-    <a onclick="parent.LC_API.open_chat_window();return false;" href="mailto:someone@example.com?Subject=Hello, Can you Help me?" class="link">Contact Us <i class="far fa-envelope" style="margin-left: 5px;"></i></a>
-  </div>
+    <div class="btn-holder">
+        <a onclick="parent.LC_API.open_chat_window();return false;" href="mailto:someone@example.com?Subject=Hello, Can you Help me?" class="link">Contact Us <i class="far fa-envelope" style="margin-left: 5px;"></i></a>
+    </div>
 </div>
 
 @endsection

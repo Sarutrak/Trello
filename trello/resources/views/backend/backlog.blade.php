@@ -13,7 +13,10 @@
   <strong>{{ $message }}</strong>
 </div>
 @endif
-<div>
+
+<body onload="myFunction()">
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">   
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10">
@@ -52,8 +55,9 @@
       </div>
     </div>
   </div>
-</div>    
 </div>
+</div>
+</body>   
 
 <div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
   <div class="btn-holder">

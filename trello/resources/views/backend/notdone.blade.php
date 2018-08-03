@@ -21,11 +21,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header"><i class="far fa-clock" style="margin-right: 5px;"></i><h7>Completed</h7>
+                        <div class="card-header"><i class="fas fa-clock" style="margin-right: 5px;"></i><h7>Incompleted</h7>
 
                         </div>
                         <div class="card-body">
-                            Completed page!
+                            Incompleted page!
                         </div>
                     </div>
                 </div>

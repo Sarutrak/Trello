@@ -20,9 +20,12 @@ Auth::routes();
 
 Route::get('/project', 'ProjectController@index')->name('projecthome');
 Route::resource('/main', 'MethodController');
+Route::delete('/projecthome/main2/destroy2', 'MethodController@destroyuser')->name('destroyuser');
 Route::resource('/card', 'JobController');
 Route::resource('/chart', 'ChartController');
 Route::resource('/backlog', 'BacklogController');
 Route::resource('/help', 'HelpController');
 Route::resource('/done', 'DoneController');
+Route::resource('/notdone', 'IncompleteController');
 Route::resource('/projecthome', 'ProjecthomeController');
+Route::resource('/calendar', 'CalendarController');

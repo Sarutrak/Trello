@@ -7,9 +7,9 @@
 
         <title>Trello</title>
         <link rel="icon" type="image/jpg" href="{{ asset('images/icon/logo.png') }}">
-        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
         <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -81,7 +81,7 @@
             
             <div class="content">
                 <div class="title m-b-md" style="color: white;font-family: 'Press Start 2P', cursive;-webkit-text-decoration-line: underline; /* Safari */
-     text-decoration-line: underline; ">
+     text-decoration-line: underline;font-size: 100px;">
                     Trello
                 </div>
 

@@ -49,7 +49,8 @@ class ProjecthomeController extends Controller
                 $project = new Projects();
                 $project->fill($request->all());
                 $project->save();
-                Session::flash('success', 'Project has been created.');
+                // Session::flash('success', 'Project has been created.');
+                sleep(1.5);
                 return redirect()->route('projecthome.index');
         }catch(exception $e){
                 die($e->message);
@@ -82,7 +83,12 @@ class ProjecthomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        try {
+        $project = Projects::find($id);
+        return view('backend.editproject', compact('project'));
+         } catch(\exception $e){
+            die($e->getMessage());
+        }
     }
 
     /**
@@ -94,7 +100,11 @@ class ProjecthomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Projects::find($id);
+        $project->fill($request->all());
+        $project -> save();
+        sleep(1);
+        return redirect()->route('projecthome.index');
     }
 
     /**
@@ -103,11 +113,18 @@ class ProjecthomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $user = Projects::find($id);
-        $user->delete();
-        Session::flash('error', 'Project Deleted.');
-        return redirect()->route('projecthome.index');
+        $project = Projects::find($request->id);
+        if ($project) {
+        $delete = $project->delete();
+        if ($delete) {
+            return response()->json(['status' => true]);
+        }
+        }
+        else{
+            return response()->json(['status' => false]);
+        }
     }
+    
 }

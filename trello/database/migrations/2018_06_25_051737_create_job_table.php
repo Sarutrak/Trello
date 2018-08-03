@@ -19,6 +19,7 @@ class CreateJobTable extends Migration
             $table->foreign('job_id')->references('id')->on('pjuser')->onDelete('cascade')->onUpdate('cascade');
             $table->string('job_name');
             $table->string('job_des');
+            $table->integer('status')->unsigned()->default('working');
             $table->integer('card_type_id');
 
             $table->timestamps();

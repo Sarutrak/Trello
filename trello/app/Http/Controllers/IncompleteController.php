@@ -8,10 +8,9 @@ use Session;
 use App\Pjuser;
 use App\Jobs;
 use App\Cardtype;
-use App\Projects;
 
 
-class MethodController extends Controller
+class IncompleteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +19,12 @@ class MethodController extends Controller
      */
     public function index()
     {
-        
+        $user = pjuser::all();
+        $joball = DB::table('job')
+                        ->select('job.job_id','job.job_name','job.job_des','cardtype.name as c_name')
+                        ->join('cardtype', 'job.card_type_id', '=', 'cardtype.card_type_id')
+                        ->get();
+       return view('backend.notdone',compact('joball','user'));
     }
 
     /**
@@ -30,7 +34,7 @@ class MethodController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -41,17 +45,7 @@ class MethodController extends Controller
      */
     public function store(Request $request)
     {
-       try {   
-                $user = new pjuser();
-                $user->fill($request->all());
-                $user->u_id=$request->u_id;
-                $user->save();
-                Session::flash('success', 'User has been created.');
-                return redirect()->route('projecthome.index');
-        }catch(exception $e){
-                die($e->message);
-            }
-            
+        //
     }
 
     /**
@@ -62,10 +56,7 @@ class MethodController extends Controller
      */
     public function show($id)
     {
-        $user = pjuser::all();
-        $job =  Jobs::all();
-        $project = Projects::find($id);
-        return view('backend.usercreate',compact('user','job','project'));
+        //
     }
 
     /**
@@ -76,12 +67,7 @@ class MethodController extends Controller
      */
     public function edit($id)
     {
-        try {
-        $user = pjuser::find($id);
-        return view('backend.edituser', compact('project','user'));
-         } catch(\exception $e){
-            die($e->getMessage());
-        }
+        //
     }
 
     /**
@@ -93,11 +79,7 @@ class MethodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = pjuser::find($id);
-        $user->fill($request->all());
-        $user -> save();
-        sleep(1);
-        return redirect()->route('projecthome.index');
+        //
     }
 
     /**
@@ -106,22 +88,8 @@ class MethodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        
-    }
-
-        public function destroyuser(Request $request)
-    {
-        $user = Pjuser::find($request->id);
-        if ($user) {
-        $delete = $user->delete();
-        if ($delete) {
-            return response()->json(['status' => true]);
-        }
-        }
-        else{
-            return response()->json(['status' => false]);
-        }
+        //
     }
 }
